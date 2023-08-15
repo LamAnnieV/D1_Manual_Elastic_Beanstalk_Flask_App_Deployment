@@ -1,7 +1,7 @@
 Create a GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
 Generate GitHub Token
-Log into Jenkins server and create a build Annie_L for the application that in GitHub Repository
-Make sure you include your name on your build's name (first name_letter of last name)
+Log into Jenkins server and create a build Annie_L for the application that in GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
+Run The Build
 
 
 
