@@ -1,16 +1,13 @@
 <p align="center">
 <img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
 </p>
-<h1 align="center">C4_deployment-1<h1> 
-
-Demonstrate your ability to run a Jenkins build and manually deploy to Elastic Beanstalk.
+<h1 align="center">Run a Jenkins Build and Manually Deploy to Elastic Beanstalk<h1> 
 
 **Step #1 Plan Deployment and map it out**
 Use Draw.io to map out the deployment plan
 
 **Step #2 Upload Repository to GitHub**
 Upload repository to GitHub and generate GitHub token
-
 
 **Step #3 and Step #4:  Use Jenkins to Auto Build and Test Application**
 Log into Jenkins create a build Annie_L for the application from GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
@@ -41,10 +38,8 @@ sh '''#!/bin/bash
 source test3/bin/activate
 py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test 
 
-
 **Step #5:  Download Repository from GitHub**
 Unzip and rezip repository
-
 
 **Step #6:  Deploy Application on AWS ELASTIC BEANSTALK**
 
@@ -60,7 +55,6 @@ AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Select:  EC2/Next
 Role Name:  Elastic-EC2/Create Role
 
 **Deploy application in AWS EC2 and Elastic Beanstalk**
-
 AWS/Elastic Beanstalk/Environments/Create Environment/Application Name:/[Platform-4] Platform:  Python/Platform Branch:  Python 3.9 running on 64bit Amazon Linux 2023/Select:  Upload Your code/Version Label:  v#/Select: Local File/Choose File:  {files that was downloaded from GitHub, Unzipped, then rezipped}/Next
 [EC2 instance profile] Select:  Elastic-EC2/Next
 [Virtual Private Cloud] Select:  default VPC/[Instance Subnets] Select:  us-east-1a/Next
@@ -85,23 +79,8 @@ Resolution
 2.  Re-Upload and deploy
    
 **Deployment #2 Results**
-
 Deployment successful, health status "OK"
 
-
 **Step #7:  Launch Website**
-
 Successful
 
-
-
-
-- Create a separate GitHub repository for this application 
-
-- Download the files from this repository and upload them to your newly created repository 
-
-- Be sure to follow the deployment instructions from this Repository  
-
-- Document your progress in a .md file in your repository. Also, document any issues you may run into and what you did to fix them.
-
-- Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
