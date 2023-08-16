@@ -82,6 +82,6 @@ Resolution
 Deployment successful, health status "OK"
 
 
-**Step #6:  Launch Website**
+**Step #7:  Launch Website**
 
 Successful
