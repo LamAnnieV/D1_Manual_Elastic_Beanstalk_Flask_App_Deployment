@@ -7,4 +7,4 @@ The Test stage test the home page and puts the results in results.xml
 Pipeline is successful
 
 
-IF the pipeline is successful, download the application files from your repository and proceed to the next step: https://scribehow.com/shared/How_to_Create_and_Deploy_a_Python_URL_Shortener_on_AWS_Elastic_Beanstalk__MS9pB8lfRaGFiKAq2FU-cw
+
