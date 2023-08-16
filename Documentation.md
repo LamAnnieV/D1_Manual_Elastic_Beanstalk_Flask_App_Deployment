@@ -1,10 +1,69 @@
-Create a GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
+**GitHub**
+Download GitHub Repository https://github.com/LamAnnieV/Deployment_01.git to local machine, unzip, and rezip to upload to AWS Elastic Beanstalk
 Generate GitHub Token
-Log into Jenkins server and create a build Annie_L for the application that in GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
-Run The Build
-The Build gets the Jenkins file from https://github.com/LamAnnieV/Deployment_01.git and come the repository and installs any required packages
-The Test stage test the home page and puts the results in results.xml
-Pipeline is successful
+
+**Jenkins**
+Log into Jenkins create a build Annie_L for the application from GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
+
+**Run The Build**
+**Build Results**
+All Stages Passed
+Total Build took less than 25 seconds to build
+Build Stage took less than 10 seconds, Test Stage took less than 1 sec
+
+Pipeline Stages
+Obtained Jenkinsfile from GitHub
+Run jenkins in Workspace
+Clone Git repository
+git-init:  initialize Jenkins library
+
+BUILD
+sh '''#!/bin/bash:  Use bash to execute in shell
+python3 -m venv test3:  create virtual environment for python3
+source test3/bin/activate
+pip install pip --upgrade
+pip install -r requirements.txt
+export FLASK_APP=application:  The FLASK_APP environment variable is used to specify how to load the application.  Load application from file application.py
+
+py.test --verbose --junit-xml test-reports/results.xml
+
+TEST
+sh '''#!/bin/bash
+source test3/bin/activate
+py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test 
+
+**Create AWS IAM Role to manually deploy application in AWS EC2 and Elastic Beanstalk**
+Create EBS Role
+AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Use Cases for other AWS services:  Elastic Beanstalk/Select:  Elastic Beanstalk - Customizable/Next
+Next
+Role Name:  aws-elasticbeanstalk-service-role/Create Role
+
+Create EC2 Role
+AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Select:  EC2/Next
+[Permissions Policies] Select:   "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier”/Next
+Role Name:  Elastic-EC2/Create Role
+
+**Deploy Application on AWS ELASTIC BEANSTALK**
+AWS/Elastic Beanstalk/Environments/Create Environment/Application Name:/[Platform-4] Platform:  Python/Platform Branch:  Python 3.9 running on 64bit Amazon Linux 2023/Select:  Upload Your code/Version Label:  v#/Select: Local File/Choose File:  {files that was downloaded from GitHub, Unzipped, then rezipped}/Next
+[EC2 instance profile] Select:  Elastic-EC2/Next
+[Virtual Private Cloud] Select:  default VPC/[Instance Subnets] Select:  us-east-1a/Next
+[Instances] Root Volume Type:  General Purpose (SSD)/Size:  10/[Capacity] Instance Types:  Deselect all & Select t2.micro/None
+Next
+Submit
+
+**Deployment Results**
+
+Deployment Failed, health status was "Degraded"
+Possible areas that might result in an unsuccessful deployment:
+1.  AWS roles were setup incorrectly
+    Verified Elastic-EC2 Role includes "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier” - TRUE
+2.  Issues with uploaded files
+   Looked into the the zip file that was uploaded to ADW.  Issue:  Zip folder, Deployment_01-main.zip, includes a file folder, Deployment_01-main, where all the files are in.
+
+Resolution.  
+1.  Unzip the file, go into the new folder Deployment_01-main and select the files and folders, Zip files, select Add to...
+2.  Re-Upload and deploy
+Deployment successful, health status "OK"
 
 
 
