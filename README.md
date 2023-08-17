@@ -7,8 +7,6 @@
 
 
 ## Step #1 Plan Deployment
-Use Draw.io to map out the deployment plan
-
 
 ![Plan](Deployment_01_Pipeline.jpg)
 
