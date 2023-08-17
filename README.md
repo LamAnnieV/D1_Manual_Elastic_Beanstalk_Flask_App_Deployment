@@ -27,18 +27,27 @@ Log into Jenkins create a build Annie_L for the application from GitHub Reposito
 
 
 **BUILD Stage**
+
 sh '''#!/bin/bash:  Use bash to execute in shell
+
 python3 -m venv test3:  create virtual environment for python3
+
 source test3/bin/activate
+
 pip install pip --upgrade
+
 pip install -r requirements.txt
+
 export FLASK_APP=application:  The FLASK_APP environment variable is used to specify how to load the application.  Load application from file application.py
 
 py.test --verbose --junit-xml test-reports/results.xml
 
 **TEST Stage**
+
 sh '''#!/bin/bash
+
 source test3/bin/activate
+
 py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test 
 
 ## Step #5:  Download Repository from GitHub
