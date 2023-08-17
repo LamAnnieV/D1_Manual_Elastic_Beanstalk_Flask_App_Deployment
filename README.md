@@ -93,6 +93,7 @@ Submit
 Deployment Failed, health status was "Degraded"
 
 **Debug**
+
 Possible areas that might result in an unsuccessful deployment:
 1.  AWS roles were setup incorrectly - no issue with roles
     Verify Elastic-EC2 Role includes "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier” 
