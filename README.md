@@ -101,7 +101,7 @@ Possible areas that might result in an unsuccessful deployment:
 2.  Issues with uploaded files to AWS
    Looked into the the zip file that was uploaded to ADW.  Issue:  Zip folder, Deployment_01-main.zip, includes a file folder, Deployment_01-main, where all the files are in.
 
-Resolution
+**Resolution**
 1.  Unzip the file, go into the new folder Deployment_01-main and select the files and folders, Zip files, select Add to...
 2.  Re-Upload and deploy
    
