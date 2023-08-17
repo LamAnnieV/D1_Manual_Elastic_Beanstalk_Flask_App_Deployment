@@ -13,11 +13,11 @@ Use Draw.io to map out the deployment plan
 ![Plan](Deployment_01_Pipeline.jpg)
 
 
-**Step #2 Upload Repository to GitHub**
+# Step #2 Upload Repository to GitHub
 
 Upload repository to GitHub and generate GitHub token
 
-**Step 3 and Step 4:  Use Jenkins to Auto Build and Test Application**
+# Step 3 and Step 4:  Use Jenkins to Auto Build and Test Application
 
 Log into Jenkins create a build Annie_L for the application from GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
 
