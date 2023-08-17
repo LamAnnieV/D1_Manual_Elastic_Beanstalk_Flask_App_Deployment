@@ -6,7 +6,8 @@
 
 **Step #1 Plan Deployment and map it out**
 Use Draw.io to map out the deployment plan
-
+<br>
+(
 **Step #2 Upload Repository to GitHub**
 Upload repository to GitHub and generate GitHub token
 
