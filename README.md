@@ -21,11 +21,7 @@ Log into Jenkins create a build Annie_L for the application from GitHub Reposito
 
 ### RUN THE BUILD
 
-All Stages Passed
-
-Total Build took less than 25 seconds to build
-
-Build Stage took less than 10 seconds, Test Stage took less than 1 sec
+![Build](D01_Jenkins_Results.jpg)
 
 ### Pipeline Stages
 
