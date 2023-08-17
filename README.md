@@ -1,8 +1,8 @@
 <p align="center">
 <img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
 </p>
-<align="center">Run a Jenkins Build and 
-<h1 align="center">Manually Deploy to Elastic Beanstalk<h1> 
+
+<h1 align="center">Run a Jenkins Build and </p> Manually Deploy to Elastic Beanstalk<h1> 
 
 **Step #1 Plan Deployment and map it out**
 Use Draw.io to map out the deployment plan
