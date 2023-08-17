@@ -7,7 +7,8 @@
 **Step #1 Plan Deployment and map it out**
 Use Draw.io to map out the deployment plan
 <br>
-(
+(Deployment 1 CI_CD Pipeline.jpg)
+<br>
 **Step #2 Upload Repository to GitHub**
 Upload repository to GitHub and generate GitHub token
 
