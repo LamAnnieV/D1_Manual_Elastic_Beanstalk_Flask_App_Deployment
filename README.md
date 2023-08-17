@@ -5,8 +5,6 @@
 
 <h1 align="center">Run a Jenkins Build and </p> Manually Deploy to Elastic Beanstalk<h1> 
 
-<align="center">Run a Jenkins Build and </p> Manually Deploy to Elastic Beanstalk
-
 
 ## Step #1 Plan Deployment and map it out
 Use Draw.io to map out the deployment plan
