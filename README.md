@@ -21,12 +21,14 @@ Upload repository to GitHub and generate GitHub token
 
 Log into Jenkins create a build Annie_L for the application from GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
 
-**RUN THE BUILD**
+### RUN THE BUILD
+
 All Stages Passed
 Total Build took less than 25 seconds to build
 Build Stage took less than 10 seconds, Test Stage took less than 1 sec
 
-Pipeline Stages
+### Pipeline Stages
+
 Obtained Jenkinsfile from GitHub
 Run jenkins in Workspace
 Clone Git repository
