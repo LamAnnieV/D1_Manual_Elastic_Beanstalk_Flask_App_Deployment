@@ -34,7 +34,7 @@ Run jenkins in Workspace
 Clone Git repository
 git-init:  initialize Jenkins library
 
-BUILD
+**BUILD Stage**
 sh '''#!/bin/bash:  Use bash to execute in shell
 python3 -m venv test3:  create virtual environment for python3
 source test3/bin/activate
@@ -44,15 +44,16 @@ export FLASK_APP=application:  The FLASK_APP environment variable is used to spe
 
 py.test --verbose --junit-xml test-reports/results.xml
 
-TEST
+**TEST Stage**
 sh '''#!/bin/bash
 source test3/bin/activate
 py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test 
 
-**Step #5:  Download Repository from GitHub**
+## Step #5:  Download Repository from GitHub
+
 Unzip and rezip repository
 
-**Step #6:  Deploy Application on AWS ELASTIC BEANSTALK**
+## Step #6:  Deploy Application on AWS ELASTIC BEANSTALK
 
 **Create AWS IAM Role to manually deploy application in AWS EC2 and Elastic Beanstalk**
 Create EBS Role
