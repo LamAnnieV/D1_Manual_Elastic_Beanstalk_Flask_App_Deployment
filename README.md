@@ -58,7 +58,7 @@ Unzip and rezip repository
 
 **Create AWS IAM Role to manually deploy application in AWS EC2 and Elastic Beanstalk**
 
-## Create EBS Role
+**Create EBS Role**
 
 AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Use Cases for other AWS services:  Elastic Beanstalk/Select:  Elastic Beanstalk - Customizable/Next
 
@@ -66,7 +66,7 @@ Next
 
 Role Name:  aws-elasticbeanstalk-service-role/Create Role
 
-## Create EC2 Role
+**Create EC2 Role**
 
 AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Select:  EC2/Next
 
