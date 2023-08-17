@@ -57,14 +57,21 @@ Unzip and rezip repository
 ## Step #6:  Deploy Application on AWS ELASTIC BEANSTALK
 
 **Create AWS IAM Role to manually deploy application in AWS EC2 and Elastic Beanstalk**
+
 Create EBS Role
+
 AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Use Cases for other AWS services:  Elastic Beanstalk/Select:  Elastic Beanstalk - Customizable/Next
+
 Next
+
 Role Name:  aws-elasticbeanstalk-service-role/Create Role
 
 Create EC2 Role
+
 AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Select:  EC2/Next
+
 [Permissions Policies] Select:   "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier”/Next
+
 Role Name:  Elastic-EC2/Create Role
 
 **Deploy application in AWS EC2 and Elastic Beanstalk**
