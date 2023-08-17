@@ -88,7 +88,7 @@ Next
 
 Submit
 
-**Deployment #1 Results**
+**Deployment Attempt #1 Results**
 
 Deployment Failed, health status was "Degraded"
 
@@ -105,11 +105,13 @@ Resolution
 1.  Unzip the file, go into the new folder Deployment_01-main and select the files and folders, Zip files, select Add to...
 2.  Re-Upload and deploy
    
-**Deployment #2 Results**
+**Deployment Attempt #2 Results**
 
-Deployment successful, health status "OK"
+![AWS_Result](Deploy_01_AWS_Result.jpg)
+
+
 
 **Step #7:  Launch Website**
-
+![Website](D01_Webstie_Results.jpg)
 
 
