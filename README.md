@@ -17,7 +17,7 @@ Use Draw.io to map out the deployment plan
 
 Upload repository to GitHub and generate GitHub token
 
-## Step 3 and Step 4:  Use Jenkins to Auto Build and Test Application
+## Step #3 and Step #4:  Use Jenkins to Auto Build and Test Application
 
 Log into Jenkins create a build Annie_L for the application from GitHub Repository https://github.com/LamAnnieV/Deployment_01.git
 
