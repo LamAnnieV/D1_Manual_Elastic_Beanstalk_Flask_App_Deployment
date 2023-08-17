@@ -52,7 +52,7 @@ py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test
 
 ## Step #5:  Download Repository from GitHub
 
-Unzip and rezip repository
+Download Repository, Unzip files and re-zip files
 
 ## Step #6:  Deploy Application on AWS ELASTIC BEANSTALK
 
@@ -112,7 +112,7 @@ Possible areas that might result in an unsuccessful deployment:
 
 
 
-**Step #7:  Launch Website**
+## Step #7:  Launch Website
 ![Website](D01_Webstie_Results.jpg)
 
 
