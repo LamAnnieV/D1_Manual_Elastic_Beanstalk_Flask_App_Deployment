@@ -25,10 +25,6 @@ Log into Jenkins create a build Annie_L for the application from GitHub Reposito
 
 ### Pipeline Stages
 
-Obtained Jenkinsfile from GitHub
-Run jenkins in Workspace
-Clone Git repository
-git-init:  initialize Jenkins library
 
 **BUILD Stage**
 sh '''#!/bin/bash:  Use bash to execute in shell
