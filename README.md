@@ -4,9 +4,11 @@ August 16, 2023
 
 By:  Annie V Lam - Kura Labs
 
+
 # Purpose
 
 Manually Deploy a Flask Application to Elastic Beanstalk.
+
 
 ## Step #1 Plan Deployment
 
@@ -16,6 +18,7 @@ Manually Deploy a Flask Application to Elastic Beanstalk.
 ## Step #2 Upload Repository to GitHub
 
 Upload the repository to GitHub and generate a [GitHub token](https://github.com/LamAnnieV/GitHub/blob/main/Generate_GitHub_Token.md)
+
 
 ## Step #3 and Step #4:  Use Jenkins to Auto Build and Auto Test Application
 
@@ -56,9 +59,11 @@ source test3/bin/activate
 py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test
 ```
 
+
 ## Step #5:  Download Repository from GitHub
 
 Download Repository, unzip files, and re-zip files
+
 
 ## Step #6:  Deploy Application on AWS ELASTIC BEANSTALK
 
@@ -73,20 +78,6 @@ How to deploy the application to Elastic Beanstalk, click [here](https://github.
 **Deployment Attempt #1 Results**
 
 Deployment Failed, health status was "Degraded"
-
-**Debug**
-
-Possible areas that might result in an unsuccessful deployment:
-1.  AWS roles were set incorrectly - no issue with roles
-    Verify Elastic-EC2 Role includes "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier” 
-    Verify AWS-elastic beanstalk-service-role Role includes AWS Elastic Beanstalk Service
-
-2.  Issues with uploaded files to AWS
-   Looked into the the zip file that was uploaded to ADW.  Issue:  The zip folder, Deployment_01-main.zip, includes a file folder, Deployment_01-main, where all the files are in.
-
-**Resolution**
-1.  Unzip the file, go into the new folder Deployment_01-main, and select the files and folders, Zip files, select Add to...
-2.  Re-upload and deploy
    
 **Deployment Attempt #2 Results**
 
@@ -98,3 +89,16 @@ Possible areas that might result in an unsuccessful deployment:
 ![Website](D01_Webstie_Results.jpg)
 
 
+## Issue(s)
+
+Possible areas that might result in an unsuccessful deployment:
+1.  AWS roles were set incorrectly - no issue with roles
+    Verify Elastic-EC2 Role includes "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier” 
+    Verify AWS-elastic beanstalk-service-role Role includes AWS Elastic Beanstalk Service
+
+2.  Issues with uploaded files to AWS
+   Looked into the the zip file that was uploaded to ADW.  Issue:  The zip folder, Deployment_01-main.zip, includes a file folder, Deployment_01-main, where all the files are in.
+
+## Resolution
+1.  Unzip the file, go into the new folder Deployment_01-main, and select the files and folders, Zip files, select Add to...
+2.  Re-upload and deploy
