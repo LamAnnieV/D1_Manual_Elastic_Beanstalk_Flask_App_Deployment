@@ -6,9 +6,7 @@ By:  Annie V Lam - Kura Labs
 
 # Purpose
 
-SSHing to a separate server for application deployment.
-
-Previously, we manually built, tested, and deployed our web application on a single server. In our updated deployment process, we utilize Terraform to create the infrastructure. However, we now build and test the application on one server before SSHing into a second server for the deployment process.
+Manually Deploy a Flask Application to Elastic Beanstalk.
 
 ## Step #1 Plan Deployment
 
