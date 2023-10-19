@@ -1,8 +1,8 @@
 # Manually Deploy a Flask Application to Elastic Beanstalk
 
-August 16, 2023
-
 By:  Annie V Lam - Kura Labs
+
+August 16, 2023
 
 
 # Purpose
