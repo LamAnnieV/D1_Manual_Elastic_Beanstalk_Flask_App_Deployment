@@ -1,10 +1,14 @@
-<p align="center">
-<img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
-</p>
+# Manually Deploy a Flask Application to Elastic Beanstalk
 
+August 16, 2023
 
-<h1 align="center">Run a Jenkins Build and </p> Manually Deploy to Elastic Beanstalk<h1> 
+By:  Annie V Lam - Kura Labs
 
+# Purpose
+
+SSHing to a separate server for application deployment.
+
+Previously, we manually built, tested, and deployed our web application on a single server. In our updated deployment process, we utilize Terraform to create the infrastructure. However, we now build and test the application on one server before SSHing into a second server for the deployment process.
 
 ## Step #1 Plan Deployment
 
@@ -13,11 +17,11 @@
 
 ## Step #2 Upload Repository to GitHub
 
-Upload the repository to GitHub and generate a GitHub token
+Upload the repository to GitHub and generate a [GitHub token](https://github.com/LamAnnieV/GitHub/blob/main/Generate_GitHub_Token.md)
 
 ## Step #3 and Step #4:  Use Jenkins to Auto Build and Auto Test Application
 
-Log into Jenkins create a build Annie_L for the application from GitHub Repository https://github.com/LamAnnieV/Deployment_01.git and run the build
+Log into Jenkins create a build for the application from GitHub Repository https://github.com/LamAnnieV/Deployment_01.git and run the build
 
 ### Results
 
@@ -28,6 +32,7 @@ Log into Jenkins create a build Annie_L for the application from GitHub Reposito
 
 **BUILD Stage**
 
+```
 sh '''#!/bin/bash:  Use bash to execute in shell
 
 python3 -m venv test3:  create virtual environment for python3
@@ -41,14 +46,17 @@ pip install -r requirements.txt
 export FLASK_APP=application:  The FLASK_APP environment variable is used to specify how to load the application.  Load application from file application.py
 
 py.test --verbose --junit-xml test-reports/results.xml
+```
 
 **TEST Stage**
 
+```
 sh '''#!/bin/bash
 
 source test3/bin/activate
 
-py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test 
+py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test
+```
 
 ## Step #5:  Download Repository from GitHub
 
@@ -56,37 +64,13 @@ Download Repository, unzip files, and re-zip files
 
 ## Step #6:  Deploy Application on AWS ELASTIC BEANSTALK
 
-**Create AWS IAM Role to manually deploy application in AWS EC2 and Elastic Beanstalk**
+**Create AWS IAM roles to manually deploy the application on Elastic Beanstalk**
 
-**Create EBS Role**
+How to set up [IAM Role](https://github.com/LamAnnieV/Setup_AWS/blob/main/Create_AWS_IAM_Roles.md).  
 
-AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Use Cases for other AWS services:  Elastic Beanstalk/Select:  Elastic Beanstalk - Customizable/Next
+**Deploy application on Elastic Beanstalk**
 
-Next
-
-Role Name:  aws-elasticbeanstalk-service-role/Create Role
-
-**Create EC2 Role**
-
-AWS/IAM/Roles/Create Role/Select:  AWS Service/[Use Case] Select:  EC2/Next
-
-[Permissions Policies] Select:   "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier”/Next
-
-Role Name:  Elastic-EC2/Create Role
-
-**Deploy application in AWS EC2 and Elastic Beanstalk**
-
-AWS/Elastic Beanstalk/Environments/Create Environment/Application Name:/[Platform-4] Platform:  Python/Platform Branch:  Python 3.9 running on 64bit Amazon Linux 2023/Select:  Upload Your code/Version Label:  v#/Select: Local File/Choose File:  {files that was downloaded from GitHub, Unzipped, then rezipped}/Next
-
-[EC2 instance profile] Select:  Elastic-EC2/Next
-
-[Virtual Private Cloud] Select:  default VPC/[Instance Subnets] Select:  us-east-1a/Next
-
-[Instances] Root Volume Type:  General Purpose (SSD)/Size:  10/[Capacity] Instance Types:  Deselect all & Select t2.micro/Next
-
-Next
-
-Submit
+How to deploy the application to Elastic Beanstalk, click [here](https://github.com/LamAnnieV/AWS_Services/blob/main/elastic_beanstalk.md).
 
 **Deployment Attempt #1 Results**
 
@@ -97,7 +81,7 @@ Deployment Failed, health status was "Degraded"
 Possible areas that might result in an unsuccessful deployment:
 1.  AWS roles were set incorrectly - no issue with roles
     Verify Elastic-EC2 Role includes "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier” 
-    Verify aws-elastic beanstalk-service-role Role includes AWS Elastic Beanstalk Service
+    Verify AWS-elastic beanstalk-service-role Role includes AWS Elastic Beanstalk Service
 
 2.  Issues with uploaded files to AWS
    Looked into the the zip file that was uploaded to ADW.  Issue:  The zip folder, Deployment_01-main.zip, includes a file folder, Deployment_01-main, where all the files are in.
