@@ -13,7 +13,7 @@
 
 ## Step #2 Upload Repository to GitHub
 
-Upload repository to GitHub and generate GitHub token
+Upload the repository to GitHub and generate a GitHub token
 
 ## Step #3 and Step #4:  Use Jenkins to Auto Build and Auto Test Application
 
@@ -52,7 +52,7 @@ py.test --verbose --junit-xml test-reports/results.xml:  Instructions to test
 
 ## Step #5:  Download Repository from GitHub
 
-Download Repository, Unzip files and re-zip files
+Download Repository, unzip files, and re-zip files
 
 ## Step #6:  Deploy Application on AWS ELASTIC BEANSTALK
 
@@ -95,16 +95,16 @@ Deployment Failed, health status was "Degraded"
 **Debug**
 
 Possible areas that might result in an unsuccessful deployment:
-1.  AWS roles were setup incorrectly - no issue with roles
+1.  AWS roles were set incorrectly - no issue with roles
     Verify Elastic-EC2 Role includes "AWSElasticBeanstalkWebTier" & “AWSElasticBeanstalkWorkerTier” 
-    Verify aws-elasticbeanstalk-service-role Role includes AWS Elastic Beanstalk Service
+    Verify aws-elastic beanstalk-service-role Role includes AWS Elastic Beanstalk Service
 
 2.  Issues with uploaded files to AWS
-   Looked into the the zip file that was uploaded to ADW.  Issue:  Zip folder, Deployment_01-main.zip, includes a file folder, Deployment_01-main, where all the files are in.
+   Looked into the the zip file that was uploaded to ADW.  Issue:  The zip folder, Deployment_01-main.zip, includes a file folder, Deployment_01-main, where all the files are in.
 
 **Resolution**
-1.  Unzip the file, go into the new folder Deployment_01-main and select the files and folders, Zip files, select Add to...
-2.  Re-Upload and deploy
+1.  Unzip the file, go into the new folder Deployment_01-main, and select the files and folders, Zip files, select Add to...
+2.  Re-upload and deploy
    
 **Deployment Attempt #2 Results**
 
